@@ -9,5 +9,5 @@ In keeping with the United Nation's SDG Goal 4, our project is focused on fine t
 
 **Instructions to host on Streamlit:**
 
-Due to the size of the model, there was a workaround we found to work with Google Drive:
+Due to the size of the model, it might be best to host via Google Cloud, there was however a workaround that could work with Google Drive we implemented:
 * Placeholder
