@@ -1,4 +1,4 @@
-# IntroToAIFinalProject
+# Kasa Twi Nu!
 
 **Table of Contents**
 * Overview
@@ -9,7 +9,7 @@
 
 **Overview**
 
-Kasa Twi Nu! a final project for Introduction to Artificial Intelligence developed by Babina Abban and Jonathan Adjei Boateng that takes advantage of NLP fine-tuning.
+Kasa Twi Nu! A final project for Introduction to Artificial Intelligence developed by Babina Abban and Jonathan Adjei Boateng that takes advantage of NLP fine-tuning on GhanaNLP.
 
 YOUTUBE DEMO LINK: https://youtu.be/GtqiJJ8PUNU
 
