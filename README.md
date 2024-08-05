@@ -34,6 +34,6 @@ Due to Github's size limitation, the app's model (a folder aptly titled "fine-tu
 
 * After downloading both folder and Python file, place them in a folder and name it "FINAL" or a name of your choosing (Likewise, you can download the Drive folder in its entirety)
 * Kindly open **Command Prompt as adminstrator** or **Terminal** depending on your operation system
-* Type "cd" followed by the directory for the main folder, and hit Enter
+* Type "cd" (without the quotation marks) followed by the directory for the main folder, and hit Enter
 * Afterwards, type "streamlit run twi_test_gui.py" without the quotation marks, and hit Enter
 * If the instructions are followed correctly, a browser window should appear and run the "Kasa Twi Nu!" program
