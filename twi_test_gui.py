@@ -74,12 +74,32 @@ def predict_words(sentence, tokenizer, model, device='cpu'):
     return suggestions
 
 # Streamlit app
+st.set_page_config(page_title="Kasa Twi Nu! - A Twi Learning Chatbot", page_icon="🗣️", layout="wide")
+
+# Sidebar with additional information
+st.sidebar.title("About")
+st.sidebar.info(
+    """
+    This app helps you improve your Twi sentences by providing suggestions for each word. 
+    Simply enter a sentence, and get suggestions to enhance your Twi writing skills.
+    """
+)
+
+st.sidebar.title("Contact")
+st.sidebar.info(
+    """
+    Developed by Babina Abban and Jonathan Adjei Boateng.
+    For more information, visit the Github page (https://github.com/Jonathan-KAB/IntroToAIFinalProject).
+    """
+)
+
+# Main title and description
 st.title("Kasa Twi Nu! - A Twi Learning Chatbot")
 st.write("Hello! I'm here to help you write out Twi sentences better. Type a sentence, and I'll help you improve it.")
 
-# Initialize chat history
-if 'messages' not in st.session_state:
-    st.session_state.messages = []
+# Section for user input
+st.subheader("Enter a Twi Sentence")
+prompt = st.text_input("What's your sentence?", "")
 
 def get_bot_response(sentence):
     # Preprocess sentence to remove punctuations
@@ -92,17 +112,31 @@ def get_bot_response(sentence):
             response += f"- {predicted_word}\n"
     return response
 
-# React to user input
-if prompt := st.chat_input("What's your sentence?"):
-    # Display user message in chat message container
-    st.chat_message("user").markdown(prompt)
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
-
+# Display suggestions
+if prompt:
     response = get_bot_response(prompt)
+    st.markdown(response, unsafe_allow_html=True)
 
-    # Display assistant response in chat message container
-    with st.chat_message("assistant"):
-        st.markdown(response, unsafe_allow_html=True)
-    # Add assistant response to chat history
-    st.session_state.messages.append({"role": "assistant", "content": response})
+# Add some space
+st.write("\n\n")
+
+# Footer
+st.markdown(
+    """
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+    <div class="footer">
+        <p>&copy; 2024 Kasa Twi Nu! Developed by Your Name. All rights reserved.</p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
